@@ -2,7 +2,7 @@ package main;
 
 import main.Conversions.*;
 
-class ConverterFactory {
+public class ConverterFactory {
     public static UnitConverter getConverter(String type) {
         return switch (type) {
             case "Time" -> new TimeConverter();
