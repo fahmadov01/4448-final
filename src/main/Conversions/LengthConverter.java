@@ -3,7 +3,7 @@ package main.Conversions;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LengthConverter implements UnitConverter {
+public class LengthConverter implements ConversionStrategy {
     private static final Map<String, Double> map = new HashMap<>();
 
     static {
@@ -18,11 +18,6 @@ public class LengthConverter implements UnitConverter {
     }
     public double fromBase(double value, String unit) {
         return value/map.get(unit);
-    }
-    public double convert(double value, String firstUnit, String secondUnit) {
-        double baseValue = toBase(value, firstUnit);
-        double convertedValue = fromBase(baseValue, secondUnit);
-        return convertedValue;
     }
 
     public String[] getUnits() {

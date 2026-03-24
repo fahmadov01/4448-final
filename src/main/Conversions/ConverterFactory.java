@@ -1,9 +1,7 @@
-package main;
-
-import main.Conversions.*;
+package main.Conversions;
 
 public class ConverterFactory {
-    public static UnitConverter getConverter(String type) {
+    public static ConversionStrategy getConverter(String type) {
         return switch (type) {
             case "Time" -> new TimeConverter();
             case "Length" -> new LengthConverter();

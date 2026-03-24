@@ -1,13 +1,12 @@
 package test.ConversionsTests;
 
-import main.Conversions.TimeConverter;
-import main.Conversions.UnitConverter;
-import main.ConverterFactory;
+import main.Conversions.ConversionStrategy;
+import main.Conversions.ConverterFactory;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TimeConversionTests {
-    private final UnitConverter converter = ConverterFactory.getConverter("Time");
+    private final ConversionStrategy converter = ConverterFactory.getConverter("Time");
 
     @Test
     void testSecondsToMinutes() {
