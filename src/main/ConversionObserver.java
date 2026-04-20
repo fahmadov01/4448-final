@@ -18,4 +18,8 @@ public class ConversionObserver implements Observer {
         double result = strategy.convert(value, fromUnit, toUnit);
         Platform.runLater(() -> targetField.setText(String.valueOf(result)));
     }
+
+    public void setStrategy(ConversionStrategy strategy) {
+        this.strategy = strategy;
+    }
 }

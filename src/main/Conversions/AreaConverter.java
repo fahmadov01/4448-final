@@ -1,6 +1,7 @@
 package main.Conversions;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AreaConverter implements ConversionStrategy {
@@ -20,7 +21,8 @@ public class AreaConverter implements ConversionStrategy {
         return value/map.get(unit);
     }
 
-    public String[] getUnits() {
-        return map.keySet().toArray(new String[0]);
+    @Override
+    public List<String> getUnits() {
+        return List.of("Acres", "Square Feet", "Square Kilometers", "Square Meters");
     }
 }

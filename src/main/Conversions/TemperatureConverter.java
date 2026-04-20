@@ -1,6 +1,7 @@
 package main.Conversions;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TemperatureConverter implements ConversionStrategy {
@@ -23,8 +24,8 @@ public class TemperatureConverter implements ConversionStrategy {
             default -> throw new IllegalArgumentException();
         };
     }
-
-    public String[] getUnits() {
-        return new String[]{"Celsius", "Fahrenheit", "Kelvin"};
+    @Override
+    public List<String> getUnits() {
+        return List.of("Celsius", "Fahrenheit", "Kelvin");
     }
 }

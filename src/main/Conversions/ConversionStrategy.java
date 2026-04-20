@@ -1,5 +1,7 @@
 package main.Conversions;
 
+import java.util.List;
+
 public interface ConversionStrategy {
     double toBase(double value, String unit);
     double fromBase(double value, String unit);
@@ -9,4 +11,6 @@ public interface ConversionStrategy {
         double truncated = (long)(convertedValue * Math.pow(10, 3)) / Math.pow(10, 3);
         return truncated;
     }
+
+    List<String> getUnits();
 }
