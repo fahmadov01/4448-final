@@ -1,4 +1,4 @@
-package main;
+package main.Observer;
 
 public interface Subject {
     void addObserver(Observer o);

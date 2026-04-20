@@ -1,6 +1,6 @@
 package main.Commands;
 
-import main.ConversionSubject;
+import main.Observer.ConversionSubject;
 
 public class ConvertCommand implements Command{
     private final ConversionSubject subject;

@@ -1,4 +1,4 @@
-package main;
+package main.Observer;
 
 import javafx.application.Platform;
 import javafx.scene.control.TextField;
