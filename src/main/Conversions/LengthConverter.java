@@ -21,8 +21,7 @@ public class LengthConverter implements ConversionStrategy {
         return value/map.get(unit);
     }
 
-    @Override
     public List<String> getUnits() {
-        return List.of("Meters", "Kilometers", "Miles", "Feet");
+        return List.of(map.keySet().toArray(new String[0]));
     }
 }

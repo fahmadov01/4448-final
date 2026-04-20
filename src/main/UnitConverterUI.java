@@ -14,13 +14,26 @@ import main.Conversions.ConverterFactory;
 import main.Conversions.ConversionStrategy;
 
 public class UnitConverterUI extends Application {
+    private void updateUnits(String type, ConversionObserver observer, ComboBox<String> firstUnit, ComboBox<String> secondUnit) {
+        ConversionStrategy strategy = ConverterFactory.getConverter(type);
+        observer.setStrategy(strategy);
+
+        List<String> units = strategy.getUnits();
+
+        firstUnit.getItems().setAll(units);
+        secondUnit.getItems().setAll(units);
+
+        firstUnit.getSelectionModel().selectFirst();
+        secondUnit.getSelectionModel().select(1);
+    }
 
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Unit Converter");
 
         ComboBox<String> unitType = new ComboBox<>();
-        unitType.getItems().addAll("Length", "Time", "Temperature", "Area");
+        unitType.getItems().addAll("Area","Data Transfer Rate","Digital Storage","Energy","Frequency","Fuel Economy",
+                "Length","Mass","Speed","Temperature","Time","Plane Angle","Pressure","Volume");
         unitType.setValue("Area");
         unitType.setPrefWidth(480);
 
@@ -52,7 +65,6 @@ public class UnitConverterUI extends Application {
 
         VBox root = new VBox(5);
         root.setStyle("-fx-padding: 20; -fx-alignment: center;");
-
         root.getChildren().addAll(unitType, topRow, convertBtn);
 
         Scene scene = new Scene(root, 800, 500);
@@ -64,20 +76,8 @@ public class UnitConverterUI extends Application {
         ConversionObserver observer = new ConversionObserver(secondInput, null);
         subject.addObserver(observer);
 
-        unitType.setOnAction(e -> {
-            String type = unitType.getValue();
-
-            ConversionStrategy strategy = ConverterFactory.getConverter(type);
-            observer.setStrategy(strategy);
-
-            List<String> units = strategy.getUnits();
-
-            firstUnit.getItems().setAll(units);
-            secondUnit.getItems().setAll(units);
-
-            firstUnit.getSelectionModel().selectFirst();
-            secondUnit.getSelectionModel().select(1);
-        });
+        unitType.setOnAction(e -> updateUnits(unitType.getValue(), observer, firstUnit, secondUnit));
+        updateUnits(unitType.getValue(), observer, firstUnit, secondUnit);
 
         convertBtn.setOnAction(e -> {
             if (unitType.getValue() == null || firstUnit.getValue() == null || secondUnit.getValue() == null || firstInput.getText().isEmpty()) {

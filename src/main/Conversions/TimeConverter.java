@@ -21,8 +21,7 @@ public class TimeConverter implements ConversionStrategy {
         return value/map.get(unit);
     }
 
-    @Override
     public List<String> getUnits() {
-        return List.of("Seconds", "Minutes", "Hours", "Days");
+        return List.of(map.keySet().toArray(new String[0]));
     }
 }

@@ -4,21 +4,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AreaConverter implements ConversionStrategy {
+public class FrequencyConverter implements ConversionStrategy {
     private static final Map<String, Double> map = new HashMap<>();
 
     static {
-        map.put("Square Meters", 1.0);
-        map.put("Square Kilometers", 1_000_000.0);
-        map.put("Square Feet", 0.092903);
-        map.put("Acres", 4046.86);
+        map.put("Hertz", 1.0);
+        map.put("Kilohertz", 1000.0);
+        map.put("Megahertz", 1000000.0);
+        map.put("Gigahertz", 1000000000.0);
     }
 
     public double toBase(double value, String unit) {
         return value * map.get(unit);
     }
+
     public double fromBase(double value, String unit) {
-        return value/map.get(unit);
+        return value / map.get(unit);
     }
 
     public List<String> getUnits() {

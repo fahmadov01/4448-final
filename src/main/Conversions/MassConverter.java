@@ -4,21 +4,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AreaConverter implements ConversionStrategy {
+public class MassConverter implements ConversionStrategy {
     private static final Map<String, Double> map = new HashMap<>();
 
     static {
-        map.put("Square Meters", 1.0);
-        map.put("Square Kilometers", 1_000_000.0);
-        map.put("Square Feet", 0.092903);
-        map.put("Acres", 4046.86);
+        map.put("Grams", 1.0);
+        map.put("Ounces", 28.35);
+        map.put("Pounds", 454.0);
+        map.put("Kilograms", 1000.0);
+        map.put("Metric tons", 1000000.0);
+        map.put("US tons", 907185.0);
     }
 
     public double toBase(double value, String unit) {
         return value * map.get(unit);
     }
+
     public double fromBase(double value, String unit) {
-        return value/map.get(unit);
+        return value / map.get(unit);
     }
 
     public List<String> getUnits() {
