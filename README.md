@@ -6,6 +6,9 @@ Team Members:
 
 # CSCI 4448/5448 - Unit Converter
 
+## Dependencies
+To be able to run the UI part of the project, you will need the JavaFX SDK library. You will also need JUnit 5 for the unit tests.
+
 ## Patterns
 
 1. My first pattern is the strategy pattern. The strategy pattern will encapsulate the conversion algorithms so that you can switch between different unit types (Length, Area, Volume, Temperature, etc.) without changing the UI or other code. I used this in the ConversionStategy interface, with each different conversion type getting its own class that implements ConversionStrategy (Area conversions in AreaConverter, Time conversions in TimeConverter and so on). 
