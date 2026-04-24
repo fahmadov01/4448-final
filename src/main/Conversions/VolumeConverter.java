@@ -15,7 +15,7 @@ public class VolumeConverter implements ConversionStrategy {
         map.put("US liquid pints", 192.0);
         map.put("US liquid quarts", 384.0);
         map.put("US liquid gallons", 768.0);
-        map.put("Milliliters", 1 / 4.929);
+        map.put("Milliliters", 1 / 4.928);
         map.put("Liters", 203.0);
         map.put("Imperial teaspoons", 1.201);
         map.put("Imperial tablespoons", 3.603);

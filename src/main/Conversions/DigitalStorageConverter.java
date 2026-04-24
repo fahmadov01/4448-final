@@ -10,7 +10,7 @@ public class DigitalStorageConverter implements ConversionStrategy {
     static {
         map.put("Bits", 1.0);
         map.put("Kilobits", 126.0);
-        map.put("Kibibytes", 128.0);
+        map.put("Kibibits", 1024.0);
         map.put("Megabits", 125000.0);
         map.put("Mebibits", 131072.0);
         map.put("Gigabits", 125000000.0);

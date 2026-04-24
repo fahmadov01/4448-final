@@ -12,13 +12,20 @@ public class TimeConverter implements ConversionStrategy {
         map.put("Minutes", 60.0);
         map.put("Hours", 3600.0);
         map.put("Days", 86400.0);
+        map.put("Weeks", 604800.0);
+        map.put("Months", 2629746.0);
+        map.put("Calendar Years", 31556952.0);
+        map.put("Leap Years", 31622400.0);
+        map.put("Decades", 315569520.0);
+        map.put("Centuries", 3155695200.0);
     }
 
     public double toBase(double value, String unit) {
         return value * map.get(unit);
     }
+
     public double fromBase(double value, String unit) {
-        return value/map.get(unit);
+        return value / map.get(unit);
     }
 
     public List<String> getUnits() {

@@ -11,7 +11,7 @@ public class SpeedConverter implements ConversionStrategy {
         map.put("Feet per second", 1.0);
         map.put("Miles per hour", 1.467);
         map.put("Meters per second", 3.281);
-        map.put("Kilometers per second", 1 / 1.097);
+        map.put("Kilometers per second", 3281.0);
         map.put("Knots", 1.688);
         map.put("Kilometers per hour", 1.097);
     }
